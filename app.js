@@ -1,12 +1,36 @@
-const userAge = 25;
-const haveWork = false;
-const cash = 1900;
-const macCost = 2000;
+const tasks = ["Задача 1"];
 
-function credit (uage, work){
-	if (uage<24) {
-		return 0;
-	}
-	return (haveWork ? 500 : 100);
+function AddTask(task, tasks){
+	tasks.push(task);
+	return true;
 }
-console.log((macCost<=(cash+credit(userAge,haveWork)) ? true : false));
+
+function DeliteTaskByName(tasks, taskName){
+	let taskNumber = tasks.indexOf(taskName);
+	tasks.splice(taskNumber,1);
+	return true;
+}
+
+function SetTaskFirst(tasks, taskName){
+	DeliteTaskByName(tasks, taskName);
+	tasks.unshift(taskName);
+	return true;
+}
+
+console.log(tasks);
+
+AddTask('Задача 2', tasks);
+AddTask('Задача 3', tasks);
+AddTask('Задача 4', tasks);
+AddTask('Задача 5', tasks);
+
+console.log(tasks);
+
+DeliteTaskByName(tasks, 'Задача 2');
+
+console.log(tasks);
+
+SetTaskFirst(tasks, 'Задача 4');
+console.log(tasks);
+
+
