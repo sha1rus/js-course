@@ -1,36 +1,14 @@
-const tasks = ["Задача 1"];
+const arr = ['!','JS','люблю','Я'];
+const outArr= [];
+for (let i = arr.length-1; i>=0; i--){
+	outArr.push(arr[i]);
 
-function AddTask(task, tasks){
-	tasks.push(task);
-	return true;
 }
 
-function DeliteTaskByName(tasks, taskName){
-	let taskNumber = tasks.indexOf(taskName);
-	tasks.splice(taskNumber,1);
-	return true;
-}
+console.log(outArr);
 
-function SetTaskFirst(tasks, taskName){
-	DeliteTaskByName(tasks, taskName);
-	tasks.unshift(taskName);
-	return true;
-}
+let outStr='';
 
-console.log(tasks);
+outStr = outArr.join(' ');
 
-AddTask('Задача 2', tasks);
-AddTask('Задача 3', tasks);
-AddTask('Задача 4', tasks);
-AddTask('Задача 5', tasks);
-
-console.log(tasks);
-
-DeliteTaskByName(tasks, 'Задача 2');
-
-console.log(tasks);
-
-SetTaskFirst(tasks, 'Задача 4');
-console.log(tasks);
-
-
+console.log(outStr);
